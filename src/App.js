@@ -6,16 +6,15 @@ import RouteRelatedBottomNavigation from './containers/RouteRelatedBottomNavigat
 import Notification from './containers/Notification';
 import Home from './containers/Home';
 import Info from './containers/Info';
+import Card from './containers/Card';
 import Settings from './containers/Settings';
-
-// コンポーネント読み込み
-import WrapMainContent from './components/WrapMainContent'
 
 // 共通スタイル読み込み
 import './App.css';
 
 // Route関連
 import { Route, Switch } from 'react-router-dom';
+
 
 // 不明なRouteは全てNotFound
 const NotFound = () => {
@@ -33,10 +32,11 @@ class App extends Component {
         <Notification/>
         <ResponsiveDrawer className="ResponsiveDrawer">
           <Switch>
-            <Route exact path="/" component={WrapMainContent(Home)} />
-            <Route exact path="/info" component={WrapMainContent(Info)}/>
-            <Route exact path="/settings" component={WrapMainContent(Settings)}/>
-            <Route component={WrapMainContent(NotFound)}/>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/info" component={Info}/>
+            <Route exact path="/card" component={Card}/>
+            <Route exact path="/settings" component={Settings}/>
+            <Route component={NotFound}/>
           </Switch>
         </ResponsiveDrawer>
         <RouteRelatedBottomNavigation/>

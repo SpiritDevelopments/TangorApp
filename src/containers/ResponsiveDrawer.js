@@ -121,7 +121,7 @@ class ResponsiveDrawer extends React.Component {
             to="/info"
             onClick={this.closeDrawerNav}
             icon={<InfoIcon />}
-            text="Animelとは"
+            text="Tangorとは"
           />
         </List>
         <Divider />
@@ -154,11 +154,15 @@ class ResponsiveDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Link to="/">
+            {/* <Link to="/">
               <Typography variant="title" color="inherit" noWrap>
-                <img src="/images/logo_animel_white.png" alt="logo_animel_white" className={classes.headerLogo}/>
+                <img src="/images/favicon.ico" alt="favicon.ico" className={classes.headerLogo}/>
+                <img src="/images/favicon.ico" className={classes.headerLogo}/>
+                Tangor
               </Typography>
-            </Link>
+            </Link> */}
+            Tangor
+            
             <IconButton
               color="inherit"
               aria-label="Open Share"

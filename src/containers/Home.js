@@ -19,6 +19,9 @@ import * as actions from '../actions';
 // AnimeList取得
 import AnimeList from '../containers/AnimeList';
 
+// スクロールバー
+import { Scrollbars } from 'react-custom-scrollbars';
+
 // スタイル
 const styles = theme => ({
   titleImage: {
@@ -76,25 +79,27 @@ class Home extends React.Component {
     const { classes } = this.props;
     
     // Year入力
-    const years = [];
-    for (var y = current_year; y >= 2014; y--) {
-      years.push(<MenuItem key={y} value={y}>{y}年</MenuItem>);
+    const course = [];
+    const course_detail = ['応用情報（AP）','基本情報（FE）'];
+    for (var y = 0; y < course_detail.length; y++) {
+      course.push(<MenuItem key={y+1} value={y+1}>{course_detail[y]}</MenuItem>);
     }
     // Cours入力
-    const cours = [];
-    const cours_detail = ['1期（冬期）', '2期（春期）', '3期（夏期）', '4期（秋期）'];
-    const cours_detail_month = ['冬：1～3月', '春：4～6月', '夏：7～9月', '秋：10～12月'];
-    for (var i = 0; i < cours_detail.length; i++) {
-      cours.push(<MenuItem key={i+1} value={i+1}>{cours_detail[i]}</MenuItem>);
+    const janre = [];
+    const janre_detail = ['データベース', 'ネットワーク', 'ハードウェア', 'セキュリティ'];
+    for (var i = 0; i < janre_detail.length; i++) {
+      janre.push(<MenuItem key={i+1} value={i+1}>{janre_detail[i]}</MenuItem>);
     }
               
 
     return (
+      <Scrollbars>
       <div>
-        <img src="/images/title.png" alt="title" className={classes.titleImage}/>
+        
+        {/* <img src="/images/title.png" alt="title" className={classes.titleImage}/> */}
         <form autoComplete="off">
           <FormControl className={classes.formControl}>
-            <InputLabel shrink htmlFor="year-helper">西暦</InputLabel>
+            <InputLabel shrink htmlFor="year-helper">コース</InputLabel>
             <Select
               value={this.state.year}
               onChange={this.handleChange}
@@ -103,11 +108,12 @@ class Home extends React.Component {
                 id: 'year-helper',
               }}
             >
-            {years}
+            {course}
             </Select>
           </FormControl>
+          <br />
           <FormControl className={classes.formControl}>
-            <InputLabel shrink htmlFor="cour-helper">クール</InputLabel>
+            <InputLabel shrink htmlFor="cour-helper">分野</InputLabel>
             <Select
               value={this.state.cour}
               onChange={this.handleChange}
@@ -116,7 +122,7 @@ class Home extends React.Component {
                 id: 'cour-helper',
               }}
             >
-            {cours}
+            {janre}
             </Select>
           </FormControl>
         </form>
@@ -126,11 +132,13 @@ class Home extends React.Component {
           className={classes.button}
           onClick={() => actions.getAnimes(this.state.year, this.state.cour)}
         >
-          {this.state.year}年（{cours_detail_month[this.state.cour-1]}）<br/>のアニメを検索
-          <Search className={classes.rightIcon}/>
+          {course_detail[this.state.year-1]}コース　{janre_detail[this.state.cour-1]}<br/>の単語を出題
+          
         </Button>
         <AnimeList/>
+        
       </div>
+      </Scrollbars>
     );
   }
 }
