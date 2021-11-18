@@ -22,9 +22,6 @@ import ShareIcon from '@material-ui/icons/Share';
 // Route関連
 import { Link } from 'react-router-dom';
 
-// コンテナの準備
-import ShareDialog from '../containers/ShareDialog';
-
 // コンポーネントの準備
 import ResponsiveDrawerListItem from '../components/ResponsiveDrawerListItem';
 
@@ -92,8 +89,7 @@ class ResponsiveDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobileOpen: false,
-      shareDialogOpen: false,
+      mobileOpen: false
     };
   }
 
@@ -103,12 +99,6 @@ class ResponsiveDrawer extends React.Component {
   openDrawerNav = () => {
     this.setState({ mobileOpen: true });
   }
-  
-  // シェアボタン挙動
-  shareDialogToggle = () => {
-    this.setState({ shareDialogOpen: !this.state.shareDialogOpen });
-  }
-  
   render() {
     
     // Material-ui関連
@@ -168,11 +158,7 @@ class ResponsiveDrawer extends React.Component {
               aria-label="Open Share"
             >
               <Typography variant="button" color="inherit" noWrap>
-                <ShareIcon onClick={this.shareDialogToggle}/>
-                <ShareDialog
-                  open={this.state.shareDialogOpen}
-                  onClose={this.shareDialogToggle}
-                />
+                {/* TODO アカウントボタン追加 */}
               </Typography>
             </IconButton>
           </Toolbar>

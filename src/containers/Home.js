@@ -16,9 +16,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions';
 
-// AnimeList取得
-import AnimeList from '../containers/AnimeList';
-
 // スクロールバー
 import { Scrollbars } from 'react-custom-scrollbars';
 
@@ -132,10 +129,10 @@ class Home extends React.Component {
           className={classes.button}
           onClick={() => actions.getAnimes(this.state.year, this.state.cour)}
         >
-          {course_detail[this.state.year-1]}コース　{janre_detail[this.state.cour-1]}<br/>の単語を出題
+          {course_detail[this.state.year-1]}コース
+          <br />{janre_detail[this.state.cour-1]}<br/>の単語を出題
           
         </Button>
-        <AnimeList/>
         
       </div>
       </Scrollbars>
