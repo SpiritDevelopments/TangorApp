@@ -8,6 +8,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 // Material-UIアイコン取得
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
 
 // Route関連
 import { Link, withRouter } from 'react-router-dom';
@@ -40,6 +41,7 @@ const styles = theme => ({
 class RouteRelatedBottomNavigation extends React.Component {
   buttons_info = [
     { label: 'トップページ', icon: <HomeIcon />, link_to: '/'},
+    { label: 'カード',icon:<LibraryBooks />, link_to: ''},
     { label: 'Tangorとは', icon: <InfoIcon />, link_to: '/info'},
   ];
   
