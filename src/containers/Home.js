@@ -8,9 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-// Material-UIアイコン取得
-import Search from '@material-ui/icons/Search';
-
 // Redux関連
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

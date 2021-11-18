@@ -16,7 +16,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SettingsIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
-import ShareIcon from '@material-ui/icons/Share';
 
 
 // Route関連
