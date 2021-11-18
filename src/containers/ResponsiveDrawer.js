@@ -16,6 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SettingsIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 
 // Route関連
@@ -157,7 +158,7 @@ class ResponsiveDrawer extends React.Component {
               aria-label="Open Share"
             >
               <Typography variant="button" color="inherit" noWrap>
-                {/* TODO アカウントボタン追加 */}
+                <PersonOutlineIcon />
               </Typography>
             </IconButton>
           </Toolbar>
