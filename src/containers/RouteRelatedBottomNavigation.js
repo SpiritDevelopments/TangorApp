@@ -41,7 +41,7 @@ const styles = theme => ({
 class RouteRelatedBottomNavigation extends React.Component {
   buttons_info = [
     { label: 'トップページ', icon: <HomeIcon />, link_to: '/'},
-    { label: 'カード',icon:<LibraryBooks />, link_to: ''},
+    { label: 'カード',icon:<LibraryBooks />, link_to: '/card'},
     { label: 'Tangorとは', icon: <InfoIcon />, link_to: '/info'},
   ];
   

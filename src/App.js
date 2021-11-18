@@ -6,7 +6,7 @@ import RouteRelatedBottomNavigation from './containers/RouteRelatedBottomNavigat
 import Notification from './containers/Notification';
 import Home from './containers/Home';
 import Info from './containers/Info';
-// import Card from './containers/Card';
+import Card from './containers/Card';
 import Settings from './containers/Settings';
 
 // 共通スタイル読み込み
@@ -34,7 +34,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/info" component={Info}/>
-            {/* <Route exact path="/card" component={Card}/> */}
+            <Route exact path="/card" component={Card}/>
             <Route exact path="/settings" component={Settings}/>
             <Route component={NotFound}/>
           </Switch>
